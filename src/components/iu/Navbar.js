@@ -37,6 +37,16 @@ const navigate = useNavigate();
           >
             DC
           </NavLink>
+
+          <NavLink
+            //activeClassName="active"
+            className={({ isActive }) =>
+              isActive ? "nav-item nav-link active" : "nav-item nav-link"
+            }
+            to="/search"
+          >
+            Search
+          </NavLink>
         </div>
       </div>
 
