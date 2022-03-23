@@ -7,7 +7,6 @@ export const Navbar = () => {
 const { user,dispatch } = useContext(AuthContext);
 const navigate = useNavigate();
   const handleLogout = () => {
-    //TODO: por hacer
     const action = {
       type: types.logout
     }
