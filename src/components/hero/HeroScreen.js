@@ -1,7 +1,9 @@
 import React, { useMemo } from "react";
 import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { heroImages } from "../../helpers/heroImages";
 import { getHeroById } from "../../selectors/getHeroById";
 
+//const heroImages =  require.context('../../../public/assets',true)
 export const HeroScreen = () => {
   const { id } = useParams();
   const navigate = useNavigate();
@@ -11,8 +13,8 @@ export const HeroScreen = () => {
     navigate(-1);
   };
   if (!hero) return <Navigate to={"/"} />;
-  const imgpath = `/assets/${hero.id}.jpg`;
-
+  //const imgpath = `/assets/${hero.id}.jpg`;
+  const imgpath = heroImages(`./${hero.id}.jpg`);
   return (
     <div className="row mt-5">
       <div className="col-4">
